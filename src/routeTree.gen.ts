@@ -10,33 +10,73 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LaporRouteImport } from './routes/lapor'
+import { Route as PetaRouteImport } from './routes/peta'
+import { Route as PuskesmasRouteImport } from './routes/puskesmas'
+import { Route as VerifikasiRouteImport } from './routes/verifikasi'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LaporRoute = LaporRouteImport.update({
+  id: '/lapor',
+  path: '/lapor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PetaRoute = PetaRouteImport.update({
+  id: '/peta',
+  path: '/peta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PuskesmasRoute = PuskesmasRouteImport.update({
+  id: '/puskesmas',
+  path: '/puskesmas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerifikasiRoute = VerifikasiRouteImport.update({
+  id: '/verifikasi',
+  path: '/verifikasi',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/lapor': typeof LaporRoute
+  '/peta': typeof PetaRoute
+  '/puskesmas': typeof PuskesmasRoute
+  '/verifikasi': typeof VerifikasiRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/lapor': typeof LaporRoute
+  '/peta': typeof PetaRoute
+  '/puskesmas': typeof PuskesmasRoute
+  '/verifikasi': typeof VerifikasiRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/lapor': typeof LaporRoute
+  '/peta': typeof PetaRoute
+  '/puskesmas': typeof PuskesmasRoute
+  '/verifikasi': typeof VerifikasiRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/lapor' | '/peta' | '/puskesmas' | '/verifikasi'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/lapor' | '/peta' | '/puskesmas' | '/verifikasi'
+  id: '__root__' | '/' | '/lapor' | '/peta' | '/puskesmas' | '/verifikasi'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LaporRoute: typeof LaporRoute
+  PetaRoute: typeof PetaRoute
+  PuskesmasRoute: typeof PuskesmasRoute
+  VerifikasiRoute: typeof VerifikasiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +88,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lapor': {
+      id: '/lapor'
+      path: '/lapor'
+      fullPath: '/lapor'
+      preLoaderRoute: typeof LaporRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/peta': {
+      id: '/peta'
+      path: '/peta'
+      fullPath: '/peta'
+      preLoaderRoute: typeof PetaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/puskesmas': {
+      id: '/puskesmas'
+      path: '/puskesmas'
+      fullPath: '/puskesmas'
+      preLoaderRoute: typeof PuskesmasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verifikasi': {
+      id: '/verifikasi'
+      path: '/verifikasi'
+      fullPath: '/verifikasi'
+      preLoaderRoute: typeof VerifikasiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LaporRoute: LaporRoute,
+  PetaRoute: PetaRoute,
+  PuskesmasRoute: PuskesmasRoute,
+  VerifikasiRoute: VerifikasiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
