@@ -170,7 +170,7 @@ const BASE: Record<string, number> = {
   "Babakan Jaya": 0.35,
   "Rancaekek Girang": 0.9,
   Panyileukan: 0.4,
-  Cilame": 0.5,
+  Cilame: 0.5,
   Tanjungwangi: 0.3,
 };
 
