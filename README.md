@@ -1,6 +1,8 @@
 # Insightful AI Indonesia
 
-buatkan saya website interaktif dengan case pack diatas , saya juga mau  ada bagian  analisis naratif ai menggunakan groq api llm model , yang api nya nanti saya berikan , kemudian datanya tolong carikan yang 1 indonesia datanya dari kaggle, sesuaikan dengan casepack tapi datasetnya gunakan yang 1 indonesia untuk api keynya yang ada didalam kurung (@secret:GROQ_API_KEY ) kemudian bahasanya indonesia , untuk datasetnya sesuaikan atau buat sintetis dari casepack
+project vibe coding berupa website interaktif yang dirancang untuk membantu pengguna memahami dan mengenali gejala yang berkaitan dengan Demam Berdarah Dengue (DBD).
+
+Website ini menyajikan informasi gejala secara sederhana dan interaktif, sehingga pengguna dapat memahami pola gejala yang umum ditemukan pada DBD serta mengetahui hal-hal yang perlu diperhatikan. Project ini juga dilengkapi dengan fitur AI Narrative Analysis menggunakan Groq API dan LLM untuk membantu memberikan penjelasan berbasis informasi yang dimasukkan oleh pengguna.
 
 This project was built with [Lovable](https://lovable.dev).
 
